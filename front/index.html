@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" style="height: 100%">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <title>WASM vs JS</title>
+    </head>
+    <body style="height: 100%">
+        <div class="jumbotron text-center">
+            <h1 class="display-4"><strong>Web Assembly versus JavaScript</strong></h1>
+            <p class="lead">A web app to compare Web Assembly efficiency regarding JavaScript.</p>
+        </div>
+        <div class="card border-dark mb-3 mx-auto" style="width: 36rem;">
+            <div class="card-header text-center">Numbers</div>
+            <div class="card-body">
+                <textarea class="form-control mr-1" id="buffer" placeholder="Enter space seperated numbers here"></textarea>
+                <br>
+                <button type="button" class="btn btn-primary" id="gen_btn">Generate random numbers</button>
+                <button type="button" class="btn btn-primary" id="js_btn">Run JavaScript</button>
+                <button type="button" class="btn btn-primary" id="wasm_btn">Run Web Assembly</button>
+            </div>
+        </div>
+        <br>
+        <div class="card border-dark mb-3 mx-auto" style="width: 36rem;">
+            <div class="card-header text-center">JavaScript Output</div>
+            <div class="card-body">
+                <p id="js_run_time"></p>
+                <p id="js_sort"></p>
+            </div>
+        </div>
+        <br>
+        <div class="card border-dark mb-3 mx-auto" style="width: 36rem;">
+            <div class="card-header text-center">Web Assembly Output</div>
+            <div class="card-body">
+                <p id="wasm_run_time"></p>
+                <p id="wasm_sort"></p>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="quick_sort.js"></script>
+        <script type="text/javascript" src="quick_sort_wasm.js"></script>
+        <script type="text/javascript" src="client.js"></script>
+        <script type="text/javascript" src="shared.js"></script>
+    </body>
+</html>

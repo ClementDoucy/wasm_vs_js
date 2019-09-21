@@ -1,0 +1,13 @@
+{
+    "name": "wasm_vs_js",
+    "version": "0.0.1",
+    "description": "Compare web assembly with JavaScript",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "morgan": "^1.9.1"
+    }
+}
