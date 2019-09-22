@@ -7,7 +7,18 @@ const js_run_time = document.getElementById("js_run_time");
 const wasm_sort = document.getElementById("wasm_sort");
 const wasm_run_time = document.getElementById("wasm_run_time");
 
-const launch_sort_wasm = Module.cwrap('launch_sort', 'string', ['string']);
+const launch_sort_wasm = Module.cwrap('launch_sort', 'number', ['string']);
+
+format_numbers = (arr, len) => {
+    var str = "";
+
+    arr.forEach((value, i) => {
+        str += value;
+        if (i != len - 1)
+            str += ' ';
+    });
+    return str;
+};
 
 tell_len = () => {
     var input = prompt("Please enter the numbers of numbers you want generate:");
@@ -81,7 +92,7 @@ js_btn.addEventListener("click", (event) => {
 
     if (sort) {
         js_run_time.innerHTML = `Sorted numbers in ${run_time} milliseconds.`;
-        js_sort.innerHTML = sort;
+        js_sort.innerHTML = format_numbers(sort, sort.length);
     } else
         js_sort.innerHTML = "Error: invalid input.";
 });
@@ -93,7 +104,8 @@ wasm_btn.addEventListener("click", (event) => {
 
     if (sort) {
         wasm_run_time.innerHTML = `Sorted numbers in ${run_time} milliseconds.`;
-        wasm_sort.innerHTML = sort;
+        // wasm_sort.innerHTML = format_numbers(sort, sort.length);
+        console.log(sort);
     } else
         wasm_sort.innerHTML = "Error: invalid input or out of memory.";
 });

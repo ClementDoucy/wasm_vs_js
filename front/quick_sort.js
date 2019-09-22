@@ -54,5 +54,5 @@ launch_sort = (nbrs_as_str) => {
     if (nbrs_arr.length == 1)
         return String(nbrs_arr[0]);
     quick_sort(nbrs_arr, 0, nbrs_arr.length - 1);
-    return format_numbers(nbrs_arr, nbrs_arr.length);
+    return nbrs_arr;
 };
