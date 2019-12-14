@@ -104,8 +104,7 @@ wasm_btn.addEventListener("click", (event) => {
 
     if (sort) {
         wasm_run_time.innerHTML = `Sorted numbers in ${run_time} milliseconds.`;
-        // wasm_sort.innerHTML = format_numbers(sort, sort.length);
-        console.log(sort);
+        // wasm_sort.innerHTML = format_numbers(sort, sort.length);;
     } else
         wasm_sort.innerHTML = "Error: invalid input or out of memory.";
 });

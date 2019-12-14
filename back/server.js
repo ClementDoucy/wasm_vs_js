@@ -4,7 +4,7 @@ const express = require("express");
 
 const port = 12000;
 const host = "0.0.0.0";
-const front = "/home/node/front/";
+const front = __dirname + "/../front/";
 
 const app = express();
 
