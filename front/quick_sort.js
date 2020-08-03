@@ -1,15 +1,14 @@
 get_numbers = (nbrs_as_str) => {
-    var nbrs_arr = [];
-    var split = nbrs_as_str.split(' ');
-    var tmp = 0;
-
-    for (i = 0; i < split.length; i++) {
-        tmp = Number(split[i]);
-        if (isNaN(tmp))
-            return null;
-        nbrs_arr.push(tmp);
+    try {
+        return nbrs_as_str.map(it => {
+            tmp = Number(it)
+            if (isNaN(tmp))
+                throw "not a number"
+            return tmp
+        })
+    } catch (err) {
+        return null
     }
-    return nbrs_arr;
 };
 
 partition = (nbrs_arr, first_idx, last_idx) => {
